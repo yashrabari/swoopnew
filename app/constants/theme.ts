@@ -8,9 +8,10 @@ export const COLORS = {
     white: "#fff",
     black: "#000000",
     red: "#EA4335",
-    gray: "##D2D8E5",
-    darkGray: "##676767",
-    lightGray1: "#f5f6fa"
+    gray: "#D2D8E5",
+    darkGray: "#676767",
+    lightGray1: "#f5f6fa",
+    blue:"#1877F2"
 };
 export const SIZES = {
     // global sizes

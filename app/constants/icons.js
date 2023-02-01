@@ -19,6 +19,7 @@ import halfCircle from '../assets/icons/halfCircle.png'
 import line1 from '../assets/icons/line1.png'
 import lock from '../assets/icons/lock.png'
 import mail from '../assets/icons/mail.png'
+import takeoff from '../assets/icons/takeoff.png'
 import mapPin from '../assets/icons/mapPin.png'
 import orangePlane from '../assets/icons/orangePlane.png'
 import plane from '../assets/icons/plane.png'
@@ -33,14 +34,34 @@ import user from '../assets/icons/user.png'
 import vector from '../assets/icons/vector.png'
 import x from '../assets/icons/x.png'
 import xBlack from '../assets/icons/xBlack.png'
-
+import rightRound from '../assets/icons/rightRound.png'
+import ham from '../assets/icons/ham.png'
+import cross from '../assets/icons/cross.png'
+import down from '../assets/icons/down.png'
+import greenCircleRight from '../assets/icons/greenCircleRight.png'
+import feed from '../assets/icons/feed.png'
+import ribbon from '../assets/icons/ribbon.png'
+import calender from '../assets/icons/calender.png'
+import smallAeroplan from '../assets/icons/smallAeroplan.png'
+import comment from '../assets/icons/comment.png'
 
 export default {
     aeroplan,
+    ham,
+    cross,
+    down,
+    ribbon,
+    comment,
+    greenCircleRight,
+    feed,
+    calender,
+    smallAeroplan,
     alertCircle,
     Apple,
+    takeoff,
     blackCircle,
     checkCircle,
+    rightRound,
     check,
     chevronLeft,
     circle,
