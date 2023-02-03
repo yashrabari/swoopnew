@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { COLORS, FONTS, icons, images, SIZES } from '../constants';
+import { ThemeContext } from '../Contexts/ThemeContext';
 
 const LoginScreen = ({ navigation }: any) => {
     console.log(navigation, 'navigation');
@@ -9,6 +10,10 @@ const LoginScreen = ({ navigation }: any) => {
     const [Password, setPassword] = useState('');
 
     // const navigation = useNavigation();
+
+
+    const { isDark } = useContext(ThemeContext)
+
 
 
     return (
@@ -25,11 +30,12 @@ const LoginScreen = ({ navigation }: any) => {
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
-                    <Image source={images.logo} />
+                    <Image source={isDark ? icons.ic_logo_dark : icons.ic_logo_light} style={{ width: 156, height: 70 }} />
                 </View>
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginVertical: SIZES.padding / 2 }}>
                     <Image
-                        source={icons.plane}
+                        source={isDark ? icons.ic_plan_dark : icons.ic_plan_light}
+                        style={{ width: 50, height: 50 }}
                     />
                     <Text
                         style={{
@@ -46,17 +52,16 @@ const LoginScreen = ({ navigation }: any) => {
                     <View
                         style={{
                             flexDirection: 'row',
-                            width: '100%',
                             alignItems: 'center',
-                            marginTop: 50,
+                            marginVertical: SIZES.padding / 2
                         }}>
                         <Image
-                            style={{ height: 24, width: 24, position: 'absolute' }}
-                            source={icons.user}
+                            source={isDark ? icons.ic_user_dark : icons.ic_user_light}
+                            style={{ width: 27, height: 27 }}
                         />
                         <TextInput
                             placeholder="Username"
-                            style={{ ...FONTS.h3, marginLeft: SIZES.padding * 2 }}
+                            style={{ ...FONTS.h3, marginLeft: SIZES.padding }}
                             //   secureTextEntry = {true}
                             placeholderTextColor={COLORS.black}
                             onChangeText={value => {
@@ -67,17 +72,16 @@ const LoginScreen = ({ navigation }: any) => {
                     <View
                         style={{
                             flexDirection: 'row',
-                            width: '100%',
                             alignItems: 'center',
-                            marginTop: 30,
+                            marginVertical: SIZES.padding / 2
                         }}>
                         <Image
-                            style={{ height: 24, width: 24, position: 'absolute' }}
-                            source={icons.lock}
+                            source={isDark ? icons.ic_lock_dark : icons.ic_lock_light}
+                            style={{ width: 27, height: 27 }}
                         />
                         <TextInput
                             placeholder="Password"
-                            style={{ ...FONTS.h3, marginLeft: SIZES.padding * 2 }}
+                            style={{ ...FONTS.h3, marginLeft: SIZES.padding }}
                             secureTextEntry={true}
                             placeholderTextColor={COLORS.black}
                             onChangeText={value => {
@@ -86,7 +90,7 @@ const LoginScreen = ({ navigation }: any) => {
                         />
                     </View>
                     <View style={{ alignItems: 'flex-end' }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
                             <Text
                                 style={{
                                     ...FONTS.h4,
@@ -125,20 +129,20 @@ const LoginScreen = ({ navigation }: any) => {
                         }}>
                         <TouchableOpacity style={{ marginHorizontal: SIZES.padding }}>
                             <Image
-                                style={{ height: 27, width: 27 }}
-                                source={icons.Google}
+                                source={isDark ? icons.ic_google_dark : icons.ic_google_dark}
+                                style={{ width: 36, height: 36 }}
                             />
                         </TouchableOpacity>
                         <TouchableOpacity style={{ marginHorizontal: SIZES.padding }}>
                             <Image
-                                style={{ height: 32, width: 27, }}
-                                source={icons.Apple}
+                                source={isDark ? icons.ic_apple_dark : icons.ic_apple_light}
+                                style={{ width: 36, height: 36 }}
                             />
                         </TouchableOpacity>
                         <TouchableOpacity style={{ marginHorizontal: SIZES.padding }}>
                             <Image
-                                style={{ height: 27, width: 27, }}
-                                source={icons.Facebook}
+                                source={isDark ? icons.ic_Facebook_dark : icons.ic_Facebook_light}
+                                style={{ width: 36, height: 36 }}
                             />
                         </TouchableOpacity>
                     </View>
@@ -146,7 +150,7 @@ const LoginScreen = ({ navigation }: any) => {
                         <Text style={{ ...FONTS.h4, color: COLORS.black, marginRight: SIZES.padding / 4 }}>
                             Not a member?
                         </Text>
-                        <TouchableOpacity onPress={()=>navigation.navigate('SignUpScreen')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
                             <Text style={{ ...FONTS.h4, color: COLORS.red, textDecorationLine: 'underline' }}>
                                 Create Account
                             </Text>

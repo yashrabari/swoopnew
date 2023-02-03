@@ -4,7 +4,7 @@ import React from 'react'
 export default function CustomCheckMark() {
   return (
     <View>
-      <Text>CustomCheckMark</Text>
+      <Text style={{ color: COLORS.black }}>CustomCheckMark</Text>
     </View>
   )
 }

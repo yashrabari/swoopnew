@@ -5,9 +5,9 @@ import { Image, FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { icons, COLORS, SIZES, FONTS } from '../constants';
 
 
-export default function OneSwoop ()  {
+export default function OneSwoop() {
 
-    const [isOpen,setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
 
 
     return (
@@ -33,9 +33,9 @@ export default function OneSwoop ()  {
                             justifyContent: 'center',
                             alignItems: 'center'
                         }}>
-                            <Text>13:05z</Text>
+                            <Text style={{ color: COLORS.black }}>13:05z</Text>
                             <Image style={{ marginHorizontal: SIZES.padding / 4 }} source={icons.smallAeroplan} />
-                            <Text>22:25z</Text>
+                            <Text style={{ color: COLORS.black }}>22:25z</Text>
 
                         </View>
                     </View>
@@ -55,8 +55,8 @@ export default function OneSwoop ()  {
             {
                 isOpen && (
                     <View style={{
-                        borderColor:COLORS.red,
-                        borderWidth:1
+                        borderColor: COLORS.red,
+                        borderWidth: 1
                     }}>
 
                     </View>

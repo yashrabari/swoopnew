@@ -21,9 +21,10 @@ export default function CreateSwapScreen({ navigation }: any) {
                             source={icons.chevronLeft}
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity onPress={() => { }}>
                         <Image
-                            source={icons.right}
+                            source={isDark ? icons.ic_check_dark : icons.ic_check_light}
+                            style={{ width: 28, height: 28 }}
                         />
                     </TouchableOpacity>
                 </View>
@@ -82,7 +83,7 @@ export default function CreateSwapScreen({ navigation }: any) {
                 marginVertical: SIZES.padding
             }}>
                 <View style={{
-                    marginVertical: SIZES.padding/2,
+                    marginVertical: SIZES.padding / 2,
 
                     flexDirection: 'row',
                 }}>
@@ -102,23 +103,23 @@ export default function CreateSwapScreen({ navigation }: any) {
                         <View style={{ marginVertical: SIZES.padding / 4, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ alignItems: 'flex-start' }}>
                                 <Text style={{ color: COLORS.black, fontWeight: '500' }}>FAO</Text>
-                                <Text>13:05z</Text>
+                                <Text style={{ color: COLORS.black }}>13:05z</Text>
                             </View>
                             <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                 <Image source={icons.smallAeroplan} />
-                                <Text>Duration: 2:35h</Text>
+                                <Text style={{ color: COLORS.black }}>Duration: 2:35h</Text>
                             </View>
                             <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ alignItems: 'flex-end' }}>
                                 <Text style={{ color: COLORS.black, fontWeight: '500' }}>BRS</Text>
-                                <Text>15:40z</Text>
+                                <Text style={{ color: COLORS.black }}>15:40z</Text>
                             </View>
                         </View>
                     </View>
                 </View>
                 <View style={{
-                    marginVertical: SIZES.padding/2,
+                    marginVertical: SIZES.padding / 2,
 
                     flexDirection: 'row',
                 }}>
@@ -138,23 +139,23 @@ export default function CreateSwapScreen({ navigation }: any) {
                         <View style={{ marginVertical: SIZES.padding / 4, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ alignItems: 'flex-start' }}>
                                 <Text style={{ color: COLORS.black, fontWeight: '500' }}>BRS</Text>
-                                <Text>16:05z</Text>
+                                <Text style={{ color: COLORS.black }}>16:05z</Text>
                             </View>
                             <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                 <Image source={icons.smallAeroplan} />
-                                <Text>Duration: 2:35h</Text>
+                                <Text style={{ color: COLORS.black }}>Duration: 2:35h</Text>
                             </View>
                             <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ alignItems: 'flex-end' }}>
                                 <Text style={{ color: COLORS.black, fontWeight: '500' }}>FAO</Text>
-                                <Text>18:40z</Text>
+                                <Text style={{ color: COLORS.black }}>18:40z</Text>
                             </View>
                         </View>
                     </View>
                 </View>
                 <View style={{
-                    marginVertical: SIZES.padding/2,
+                    marginVertical: SIZES.padding / 2,
 
                     flexDirection: 'row',
                 }}>
@@ -174,23 +175,23 @@ export default function CreateSwapScreen({ navigation }: any) {
                         <View style={{ marginVertical: SIZES.padding / 4, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ alignItems: 'flex-start' }}>
                                 <Text style={{ color: COLORS.black, fontWeight: '500' }}>FAO</Text>
-                                <Text>19:05z</Text>
+                                <Text style={{ color: COLORS.black }}>19:05z</Text>
                             </View>
                             <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                 <Image source={icons.smallAeroplan} />
-                                <Text>Duration: 2:35h</Text>
+                                <Text style={{ color: COLORS.black }}>Duration: 2:35h</Text>
                             </View>
                             <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ alignItems: 'flex-end' }}>
                                 <Text style={{ color: COLORS.black, fontWeight: '500' }}>VLC</Text>
-                                <Text>20:30z</Text>
+                                <Text style={{ color: COLORS.black }}>20:30z</Text>
                             </View>
                         </View>
                     </View>
                 </View>
                 <View style={{
-                    marginVertical: SIZES.padding/2,
+                    marginVertical: SIZES.padding / 2,
 
                     flexDirection: 'row',
                 }}>
@@ -206,7 +207,7 @@ export default function CreateSwapScreen({ navigation }: any) {
                                 color: COLORS.darkGray,
                             }}>4th Sector Flight Number</Text>
                         </View>
-                      
+
                     </View>
                 </View>
             </View>

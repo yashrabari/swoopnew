@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Image, FlatList, Text, TouchableOpacity, View } from 'react-native';
 
 import { icons, COLORS, SIZES, FONTS } from '../constants';
+import { ThemeContext } from '../Contexts/ThemeContext';
 
 
 
@@ -14,6 +15,7 @@ const AllSwapScreen = ({ navigation }: any) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
+    const { isDark } = useContext(ThemeContext)
 
 
 
@@ -27,7 +29,8 @@ const AllSwapScreen = ({ navigation }: any) => {
                     }}>
                     <TouchableOpacity >
                         <Image
-                            source={icons.vector}
+                            source={isDark ? icons.ic_swoop_icon_dark : icons.ic_swoop_icon_light}
+                            style={{ width: 28, height: 28 }}
                         />
                     </TouchableOpacity>
 
@@ -62,18 +65,20 @@ const AllSwapScreen = ({ navigation }: any) => {
                                     justifyContent: 'center',
                                     alignItems: 'center'
                                 }}>
-                                    <Text>13:05z</Text>
-                                    <Image style={{ marginHorizontal: SIZES.padding / 4 }} source={icons.smallAeroplan} />
-                                    <Text>22:25z</Text>
+                                    <Text style={{ color: COLORS.black }}>13:05z</Text>
+                                    <Image
+                                        source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
+                                        style={{ width: 24, height: 24, marginHorizontal: SIZES.padding / 4 }}
+                                    />
+                                    <Text style={{ color: COLORS.black }}>22:25z</Text>
 
                                 </View>
                             </View>
                             <Image
-                                style={{
-                                    marginVertical: SIZES.padding / 8
-                                }}
-                                source={icons.combinedShape}
+                                source={isDark ? icons.ic_exchange_dark : icons.ic_exchange_light}
+                                style={{ width: 16, height: 16, marginVertical: SIZES.padding / 8 }}
                             />
+
                             <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: COLORS.black, }}>
                                 OFF
                             </Text>
@@ -92,14 +97,20 @@ const AllSwapScreen = ({ navigation }: any) => {
                             <TouchableOpacity>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
                                     <Text style={{ ...FONTS.h3, color: COLORS.black }}>Decline</Text>
-                                    <Image style={{ tintColor: COLORS.black, marginHorizontal: SIZES.padding }} source={icons.x} />
+                                    <Image
+                                        source={isDark ? icons.ic_close_dark : icons.ic_close_light}
+                                        style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
+                                    />
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity>
 
                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
                                     <Text style={{ ...FONTS.h3, color: COLORS.black }}>Accept</Text>
-                                    <Image style={{ tintColor: COLORS.black, marginHorizontal: SIZES.padding }} source={icons.right} />
+                                    <Image
+                                        source={isDark ? icons.ic_check_dark : icons.ic_check_light}
+                                        style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
+                                    />
                                 </View>
                             </TouchableOpacity>
                         </View>
@@ -133,17 +144,18 @@ const AllSwapScreen = ({ navigation }: any) => {
                                 justifyContent: 'center',
                                 alignItems: 'center'
                             }}>
-                                <Text>13:05z</Text>
-                                <Image style={{ marginHorizontal: SIZES.padding / 4 }} source={icons.smallAeroplan} />
-                                <Text>22:25z</Text>
+                                <Text style={{ color: COLORS.black }}>13:05z</Text>
+                                <Image
+                                    source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
+                                    style={{ width: 24, height: 24, marginHorizontal: SIZES.padding / 4 }}
+                                />
+                                <Text style={{ color: COLORS.black }}>22:25z</Text>
 
                             </View>
                         </View>
                         <Image
-                            style={{
-                                marginVertical: SIZES.padding / 8
-                            }}
-                            source={icons.combinedShape}
+                            source={isDark ? icons.ic_exchange_dark : icons.ic_exchange_light}
+                            style={{ width: 16, height: 16, marginVertical: SIZES.padding / 8 }}
                         />
                         <View style={{
                             flexDirection: 'row',
@@ -159,9 +171,12 @@ const AllSwapScreen = ({ navigation }: any) => {
                                 justifyContent: 'center',
                                 alignItems: 'center'
                             }}>
-                                <Text>13:05z</Text>
-                                <Image style={{ marginHorizontal: SIZES.padding / 4 }} source={icons.smallAeroplan} />
-                                <Text>22:25z</Text>
+                                <Text style={{ color: COLORS.black }}>13:05z</Text>
+                                <Image
+                                    source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
+                                    style={{ width: 24, height: 24, marginHorizontal: SIZES.padding / 4 }}
+                                />
+                                <Text style={{ color: COLORS.black }}>22:25z</Text>
 
                             </View>
                         </View>

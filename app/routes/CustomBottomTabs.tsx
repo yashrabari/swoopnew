@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Image, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -11,6 +11,7 @@ import { icons, COLORS, SIZES, FONTS } from '../constants';
 import SettingsScreens from '../Screens/SettingsScreens';
 import AllSwapScreen from '../Screens/AllSwapsScreen';
 import InReturns from '../Screens/InReturns';
+import { ThemeContext } from '../Contexts/ThemeContext';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,6 +20,7 @@ function CustomBottomTab({ state, descriptors, navigation }: any) {
 
     const [isOpen, setIsOpen] = useState(false)
 
+    const { isDark } = useContext(ThemeContext)
 
     return (
         <View>
@@ -30,7 +32,7 @@ function CustomBottomTab({ state, descriptors, navigation }: any) {
                         flexDirection: 'row',
                         position: 'absolute',
                         bottom: SIZES.padding * 2,
-                        backgroundColor: COLORS.black,
+                        backgroundColor: COLORS.bgGray,
                         borderRadius: SIZES.base * 5,
                         right: SIZES.padding * 2,
                         width: SIZES.width * .8,
@@ -43,8 +45,16 @@ function CustomBottomTab({ state, descriptors, navigation }: any) {
                             onPress={() => {
                             }}>
                             <Image
-                                style={{ tintColor: 'white' }}
-                                source={icons.search}
+                                source={isDark ? icons.ic_search_dark : icons.ic_search_light}
+                                style={{ width: 27, height: 27 }}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('MySwapScreen')}>
+
+                            <Image
+                                source={isDark ? icons.ic_user_white_dark : icons.ic_user_white_light}
+                                style={{ width: 27, height: 27 }}
                             />
                         </TouchableOpacity>
                         <TouchableOpacity
@@ -52,23 +62,16 @@ function CustomBottomTab({ state, descriptors, navigation }: any) {
                                 navigation.navigate('InReturns')
                             }}>
                             <Image
-                                style={{ tintColor: 'white' }}
-                                source={icons.repeat}
+                                source={isDark ? icons.ic_repeat_dark : icons.ic_repeat_light}
+                                style={{ width: 27, height: 27 }}
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('MySwapScreen')}>
 
-                            <Image
-                                style={{ tintColor: 'white' }}
-                                source={icons.user}
-                            />
-                        </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => navigation.navigate('SettingScreen')}>
                             <Image
-                                style={{ tintColor: 'white' }}
-                                source={icons.settings}
+                                source={isDark ? icons.ic_settings_dark : icons.ic_settings_light}
+                                style={{ width: 27, height: 27 }}
                             />
                         </TouchableOpacity>
                     </View>
@@ -84,8 +87,8 @@ function CustomBottomTab({ state, descriptors, navigation }: any) {
                     onPress={() => setIsOpen(!isOpen)}
                 >
                     <Image
-                        style={{}}
-                        source={isOpen ? icons.close : icons.group}
+                        style={{ width: 54, height: 54 }}
+                        source={isOpen ? (isDark ? icons.ic_menu_close_dark : icons.ic_menu_close_light) : (isDark ? icons.ic_menu_dark : icons.ic_menu_light)}
                     />
                 </TouchableOpacity>
             </View>
