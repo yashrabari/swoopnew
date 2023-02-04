@@ -10,6 +10,10 @@ import ForgotPasswordScreen from '../Screens/ForgotPasswordScreen';
 import MySwapDetailsScreen from '../Screens/MySwapDetailsScreen';
 import AboutUsScreen from '../Screens/AboutUsScreen';
 import ContactUsScreen from '../Screens/ContactUsScreen';
+import TermsNCondition from '../Screens/TermsNCondition';
+import DeleteAccountScreen from '../Screens/DeleteAccountScreen';
+import DeleteAccountConfirmationScreen from '../Screens/DeleteAccountConfirmationScreen';
+import DeleteAccountReviewScreen from '../Screens/DeleteAccountReviewScreen';
 
 
 export default function RootStack() {
@@ -26,6 +30,10 @@ export default function RootStack() {
                 <Stack.Screen name="MySwapDetails" component={MySwapDetailsScreen} />
                 <Stack.Screen name="AboutUs" component={AboutUsScreen} />
                 <Stack.Screen name="ContactUs" component={ContactUsScreen} />
+                <Stack.Screen name="TermsNCondition" component={TermsNCondition} />
+                <Stack.Screen name="DeleteAccount" component={DeleteAccountScreen} />
+                <Stack.Screen name="DeleteAccountConfirmation" component={DeleteAccountConfirmationScreen} />
+                <Stack.Screen name="DeleteAccountReview" component={DeleteAccountReviewScreen} />
 
             </Stack.Navigator>
         </NavigationContainer>

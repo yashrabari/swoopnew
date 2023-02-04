@@ -292,7 +292,7 @@ const SettingScreen = ({ navigation }: any) => {
                 <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.black }]}>Contact Us</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('TermsNCondition')}>
               <View
                 style={styles.inputFieldComponent}>
                 <Image
@@ -302,7 +302,7 @@ const SettingScreen = ({ navigation }: any) => {
                 <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.black }]}>Terms & Conditions</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('DeleteAccount')}>
               <View
                 style={styles.inputFieldComponent}>
                 <Image
@@ -312,7 +312,7 @@ const SettingScreen = ({ navigation }: any) => {
                 <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.black }]}>Delete Account</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
               <View
                 style={styles.inputFieldComponent}>
                 <Image
