@@ -15,7 +15,7 @@ export default function InReturns({ navigation }: any) {
     const { isDark } = useContext(ThemeContext)
 
     return (
-        <ScrollView style={{ flex: 1, backgroundColor: COLORS.gray, paddingVertical: SIZES.padding * 2, }}>
+        <ScrollView style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2, }}>
             <View style={{ marginHorizontal: SIZES.padding, }}>
                 <View
                     style={{
@@ -36,8 +36,8 @@ export default function InReturns({ navigation }: any) {
                     </TouchableOpacity>
                 </View>
                 <View style={{ marginVertical: SIZES.padding }}>
-                    <Text style={{ ...FONTS.h1, color: COLORS.black }}>In Return</Text>
-                    <Text style={{ ...FONTS.body4, color: COLORS.black }}>Tuesday, 18th October 2022</Text>
+                    <Text style={{ ...FONTS.h1, color: isDark ? COLORS.golden : COLORS.black }}>In Return</Text>
+                    <Text style={{ ...FONTS.body4, color: isDark ? COLORS.golden : COLORS.black }}>Tuesday, 18th October 2022</Text>
                 </View>
             </View>
             <View style={styles.midPart}>
@@ -49,7 +49,7 @@ export default function InReturns({ navigation }: any) {
                             source={isDark ? icons.ic_duty_dark : icons.ic_duty_light}
                             style={{ width: 27, height: 27 }}
                         />
-                        <Text style={{ color: COLORS.darkGray, ...FONTS.h3, ...styles.inputField }}>Duty Type</Text>
+                        <Text style={{ color: isDark ? COLORS.lightGolden : COLORS.darkGray, ...FONTS.h3, ...styles.inputField }}>Duty Type</Text>
                         <Image
                             style={{ width: 16, height: 16, marginLeft: SIZES.padding * 2 }}
                             source={isDark ? icons.ic_down_dark : icons.ic_down_light}
@@ -83,27 +83,27 @@ export default function InReturns({ navigation }: any) {
                         <View>
                             <Text style={{
                                 fontSize: SIZES.h3,
-                                color: COLORS.black,
+                                color: isDark ? COLORS.golden : COLORS.black,
                                 fontWeight: '500'
                             }}>FR8249</Text>
                         </View>
                         <View style={{ marginVertical: SIZES.padding / 4, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ alignItems: 'flex-start' }}>
-                                <Text style={{ color: COLORS.black, fontWeight: '500' }}>FAO</Text>
-                                <Text style={{ color: COLORS.black }}>13:05z</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black, fontWeight: '500' }}>FAO</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>13:05z</Text>
                             </View>
-                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
+                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: isDark ? COLORS.lightGolden : COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                 <Image
                                     source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
                                     style={{ width: 18, height: 18 }}
                                 />
-                                <Text style={{ color: COLORS.black }}>Duration: 2:35h</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>Duration: 2:35h</Text>
                             </View>
-                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
+                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: isDark ? COLORS.lightGolden : COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ alignItems: 'flex-end' }}>
-                                <Text style={{ color: COLORS.black, fontWeight: '500' }}>BRS</Text>
-                                <Text style={{ color: COLORS.black }}>15:40z</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black, fontWeight: '500' }}>BRS</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>15:40z</Text>
                             </View>
                         </View>
                     </View>
@@ -125,27 +125,27 @@ export default function InReturns({ navigation }: any) {
                         <View>
                             <Text style={{
                                 fontSize: SIZES.h3,
-                                color: COLORS.black,
+                                color: isDark ? COLORS.golden : COLORS.black,
                                 fontWeight: '500'
                             }}>FR8248</Text>
                         </View>
                         <View style={{ marginVertical: SIZES.padding / 4, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ alignItems: 'flex-start' }}>
-                                <Text style={{ color: COLORS.black, fontWeight: '500' }}>BRS</Text>
-                                <Text style={{ color: COLORS.black }}>16:05z</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black, fontWeight: '500' }}>BRS</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>16:05z</Text>
                             </View>
-                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
+                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: isDark ? COLORS.lightGolden : COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                 <Image
                                     source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
                                     style={{ width: 18, height: 18 }}
                                 />
-                                <Text style={{ color: COLORS.black }}>Duration: 2:35h</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>Duration: 2:35h</Text>
                             </View>
-                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
+                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: isDark ? COLORS.lightGolden : COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ alignItems: 'flex-end' }}>
-                                <Text style={{ color: COLORS.black, fontWeight: '500' }}>FAO</Text>
-                                <Text style={{ color: COLORS.black }}>18:40z</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black, fontWeight: '500' }}>FAO</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>18:40z</Text>
                             </View>
                         </View>
                     </View>
@@ -167,27 +167,27 @@ export default function InReturns({ navigation }: any) {
                         <View>
                             <Text style={{
                                 fontSize: SIZES.h3,
-                                color: COLORS.black,
+                                color: isDark ? COLORS.golden : COLORS.black,
                                 fontWeight: '500'
                             }}>FR8930</Text>
                         </View>
                         <View style={{ marginVertical: SIZES.padding / 4, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ alignItems: 'flex-start' }}>
-                                <Text style={{ color: COLORS.black, fontWeight: '500' }}>FAO</Text>
-                                <Text style={{ color: COLORS.black }}>19:05z</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black, fontWeight: '500' }}>FAO</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>19:05z</Text>
                             </View>
-                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
+                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: isDark ? COLORS.lightGolden : COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                 <Image
                                     source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
                                     style={{ width: 18, height: 18 }}
                                 />
-                                <Text style={{ color: COLORS.black }}>Duration: 2:35h</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>Duration: 2:35h</Text>
                             </View>
-                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
+                            <View style={{ borderBottomWidth: 1, width: SIZES.width / 12, borderColor: isDark ? COLORS.lightGolden : COLORS.darkGray, marginHorizontal: SIZES.padding / 2 }}></View>
                             <View style={{ alignItems: 'flex-end' }}>
-                                <Text style={{ color: COLORS.black, fontWeight: '500' }}>VLC</Text>
-                                <Text style={{ color: COLORS.black }}>20:30z</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black, fontWeight: '500' }}>VLC</Text>
+                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>20:30z</Text>
                             </View>
                         </View>
                     </View>
@@ -209,7 +209,7 @@ export default function InReturns({ navigation }: any) {
                         <View>
                             <Text style={{
                                 fontSize: SIZES.h3,
-                                color: COLORS.darkGray,
+                                color: isDark ? COLORS.lightGolden : COLORS.darkGray,
                             }}>4th Sector Flight Number</Text>
                         </View>
 
@@ -224,7 +224,7 @@ export default function InReturns({ navigation }: any) {
                 <TextInput
                     placeholder="Commnet"
                     style={{ ...FONTS.h3, marginLeft: SIZES.padding }}
-                    placeholderTextColor={COLORS.black}
+                    placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
                 />
             </View>
         </ScrollView>

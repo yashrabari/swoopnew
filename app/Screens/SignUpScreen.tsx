@@ -21,10 +21,10 @@ const SignUpScreen = ({ navigation }: any) => {
         <Swiper
             index={index}
             loop={false}
-            activeDot={<View style={{ backgroundColor: COLORS.white, marginHorizontal: SIZES.padding, width: SIZES.base, height: SIZES.base, borderRadius: SIZES.base, }} />}
-            dot={<View style={{ backgroundColor: COLORS.black, marginHorizontal: SIZES.padding, width: SIZES.base, height: SIZES.base, borderRadius: SIZES.base, }} />}
+            activeDot={<View style={{ backgroundColor: COLORS.white, marginHorizontal: SIZES.padding / 2, width: SIZES.base, height: SIZES.base, borderRadius: SIZES.base, }} />}
+            dot={<View style={{ backgroundColor: COLORS.black, marginHorizontal: SIZES.padding / 2, width: SIZES.base, height: SIZES.base, borderRadius: SIZES.base, }} />}
         >
-            <View style={{ flex: 1, backgroundColor: COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+            <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
                 <View style={{ marginHorizontal: SIZES.padding, }}>
                     <View
                         style={{
@@ -43,7 +43,7 @@ const SignUpScreen = ({ navigation }: any) => {
                         </TouchableOpacity>
                     </View>
                     <View style={{ marginVertical: SIZES.padding }}>
-                        <Text style={{ ...FONTS.h1, color: COLORS.black }}>Create Account</Text>
+                        <Text style={{ ...FONTS.h1, color: isDark ? COLORS.golden : COLORS.black }}>Create Account</Text>
                     </View>
                 </View>
                 <View style={styles.midPart}>
@@ -56,8 +56,9 @@ const SignUpScreen = ({ navigation }: any) => {
                             />
                             <TextInput
                                 placeholder="Username"
-                                style={styles.inputField}
-                                placeholderTextColor={COLORS.black}
+                                cursorColor={isDark ? COLORS.gray : COLORS.black}
+                                style={[styles.inputField, { color: isDark ? COLORS.gray : COLORS.black }]}
+                                placeholderTextColor={isDark ? COLORS.gray : COLORS.black}
                                 onChangeText={value => {
                                     setUserName(value);
                                 }}
@@ -71,8 +72,9 @@ const SignUpScreen = ({ navigation }: any) => {
                             />
                             <TextInput
                                 placeholder="Email"
-                                style={styles.inputField}
-                                placeholderTextColor={COLORS.black}
+                                cursorColor={isDark ? COLORS.gray : COLORS.black}
+                                style={[styles.inputField, { color: isDark ? COLORS.gray : COLORS.black }]}
+                                placeholderTextColor={isDark ? COLORS.gray : COLORS.black}
                                 onChangeText={value => {
                                     setEmail(value);
                                 }}
@@ -87,9 +89,11 @@ const SignUpScreen = ({ navigation }: any) => {
                             />
                             <TextInput
                                 placeholder="Password"
-                                style={styles.inputField}
+
                                 secureTextEntry={true}
-                                placeholderTextColor={COLORS.black}
+                                cursorColor={isDark ? COLORS.gray : COLORS.black}
+                                style={[styles.inputField, { color: isDark ? COLORS.gray : COLORS.black }]}
+                                placeholderTextColor={isDark ? COLORS.gray : COLORS.black}
                                 onChangeText={value => {
                                     setPassword(value);
                                 }}
@@ -103,9 +107,10 @@ const SignUpScreen = ({ navigation }: any) => {
                             />
                             <TextInput
                                 placeholder="Confirm Password"
-                                style={styles.inputField}
                                 secureTextEntry={true}
-                                placeholderTextColor={COLORS.black}
+                                cursorColor={isDark ? COLORS.gray : COLORS.black}
+                                style={[styles.inputField, { color: isDark ? COLORS.gray : COLORS.black }]}
+                                placeholderTextColor={isDark ? COLORS.gray : COLORS.black}
                                 onChangeText={value => {
                                     setConfirmPassword(value);
                                 }}
@@ -117,8 +122,12 @@ const SignUpScreen = ({ navigation }: any) => {
                                 <Image style={{ width: 27, height: 27 }} source={!isTCChecked ? (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light) : (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light)} />
                             </TouchableOpacity>
                             <Text
-                                style={styles.inputField}
-                            >I agree to the Terms & Conditions</Text>
+                                style={{ ...styles.inputField, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}
+                            >I agree to the </Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('TermsNCondition')}>
+                                <Text style={{ textDecorationLine: 'underline', color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Terms & Conditions</Text>
+
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={styles.elipsPart}>
@@ -136,7 +145,7 @@ const SignUpScreen = ({ navigation }: any) => {
 
                 </View>
             </View>
-            <View style={{ flex: 1, backgroundColor: COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+            <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
                 <View style={{ marginHorizontal: SIZES.padding, }}>
                     <View
                         style={{
@@ -157,7 +166,7 @@ const SignUpScreen = ({ navigation }: any) => {
                         </TouchableOpacity>
                     </View>
                     <View style={{ marginVertical: SIZES.padding }}>
-                        <Text style={{ ...FONTS.h1, color: COLORS.black }}>Create Account</Text>
+                        <Text style={{ ...FONTS.h1, color: isDark ? COLORS.golden : COLORS.black }}>Create Account</Text>
                     </View>
                 </View>
                 <View style={styles.midPart}>
@@ -168,7 +177,7 @@ const SignUpScreen = ({ navigation }: any) => {
                                 style={{ width: 27, height: 27 }}
                                 source={isDark ? icons.ic_airline_dark : icons.ic_airline_light}
                             />
-                            <Text style={styles.inputField} >Airlines</Text>
+                            <Text style={[styles.inputField, { color: isDark ? COLORS.lightGolden : COLORS.darkGray }]} >Airlines</Text>
 
                             <Image
                                 style={{ width: 16, height: 16, marginLeft: SIZES.padding * 2 }}
@@ -183,8 +192,8 @@ const SignUpScreen = ({ navigation }: any) => {
                             />
                             <TextInput
                                 placeholder="Homebase"
-                                style={styles.inputField}
-                                placeholderTextColor={COLORS.black}
+                                style={[styles.inputField, { color: isDark ? COLORS.lightGolden : COLORS.darkGray }]}
+                                placeholderTextColor={isDark ? COLORS.lightGolden : COLORS.darkGray}
                                 onChangeText={value => {
                                     setUserName(value);
                                 }}
@@ -198,8 +207,8 @@ const SignUpScreen = ({ navigation }: any) => {
                             />
                             <TextInput
                                 placeholder="Crewcode"
-                                style={styles.inputField}
-                                placeholderTextColor={COLORS.black}
+                                style={[styles.inputField, { color: isDark ? COLORS.lightGolden : COLORS.darkGray }]}
+                                placeholderTextColor={isDark ? COLORS.lightGolden : COLORS.darkGray}
                                 onChangeText={value => {
                                     setEmail(value);
                                 }}
@@ -212,17 +221,17 @@ const SignUpScreen = ({ navigation }: any) => {
                                     source={isDark ? icons.ic_position_dark : icons.ic_position_light}
                                     style={{ width: 27, height: 27 }}
                                 />
-                                <Text style={styles.inputField} >Position</Text>
+                                <Text style={[styles.inputField, { color: isDark ? COLORS.lightGolden : COLORS.darkGray }]} >Position</Text>
                             </View>
                             <View style={{ marginHorizontal: SIZES.padding * 2 }}>
                                 <View style={styles.checkBoxContainer}>
-                                    <Text style={{ color: COLORS.black }}>Captaine</Text>
+                                    <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>Captaine</Text>
                                     <TouchableOpacity onPress={() => setIsChecked(!isChecked)}>
                                         <Image style={{ width: 24, height: 24 }} source={isChecked ? (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light) : (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light)} />
                                     </TouchableOpacity>
                                 </View>
                                 <View style={styles.checkBoxContainer}>
-                                    <Text style={{ color: COLORS.black }}>First Officer</Text>
+                                    <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>First Officer</Text>
                                     <TouchableOpacity onPress={() => setIsChecked(!isChecked)}>
                                         <Image style={{ width: 24, height: 24 }} source={!isChecked ? (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light) : (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light)} />
                                     </TouchableOpacity>
@@ -296,6 +305,7 @@ const styles = StyleSheet.create({
 
 
     checkBoxContainer: {
+        width: SIZES.width * .6,
         marginTop: SIZES.padding / 2,
         flexDirection: 'row',
         justifyContent: 'space-between',

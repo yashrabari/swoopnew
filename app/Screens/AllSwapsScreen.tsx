@@ -20,7 +20,7 @@ const AllSwapScreen = ({ navigation }: any) => {
 
 
     return (
-        <View style={{ flex: 1, backgroundColor: COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
             <View style={{ marginHorizontal: SIZES.padding }}>
                 <View
                     style={{
@@ -36,8 +36,8 @@ const AllSwapScreen = ({ navigation }: any) => {
 
                 </View>
                 <View style={{ marginVertical: SIZES.padding }}>
-                    <Text style={{ ...FONTS.h1, color: COLORS.black }}>All Swaps</Text>
-                    <Text style={{ ...FONTS.body4, color: COLORS.black }}>Tuesday, 18th October 2022</Text>
+                    <Text style={{ ...FONTS.h1, color: isDark ? COLORS.golden : COLORS.black }}>All Swaps</Text>
+                    <Text style={{ ...FONTS.body4, color: isDark ? COLORS.golden : COLORS.black }}>Tuesday, 18th October 2022</Text>
                 </View>
 
 
@@ -50,13 +50,13 @@ const AllSwapScreen = ({ navigation }: any) => {
                         alignItems: 'center'
                     }}>
                         <View>
-                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8 }}>Sat, 22nd Oct 2022</Text>
+                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Sat, 22nd Oct 2022</Text>
                             <View style={{
                                 flexDirection: 'row',
                                 justifyContent: 'space-between',
                                 alignItems: 'center'
                             }}>
-                                <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: COLORS.black, fontWeight: '600' }}>
+                                <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, fontWeight: '600' }}>
                                     FA0 - BRS - FAO - VLC - FAO
                                 </Text>
                                 <View style={{
@@ -65,12 +65,12 @@ const AllSwapScreen = ({ navigation }: any) => {
                                     justifyContent: 'center',
                                     alignItems: 'center'
                                 }}>
-                                    <Text style={{ color: COLORS.black }}>13:05z</Text>
+                                    <Text style={{ color: isDark ? COLORS.lightGolden : COLORS.black }}>13:05z</Text>
                                     <Image
-                                        source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
+                                        source={isDark ? icons.ic_plan_dark : icons.ic_logo_icon_light}
                                         style={{ width: 24, height: 24, marginHorizontal: SIZES.padding / 4 }}
                                     />
-                                    <Text style={{ color: COLORS.black }}>22:25z</Text>
+                                    <Text style={{ color: isDark ? COLORS.lightGolden : COLORS.black }}>22:25z</Text>
 
                                 </View>
                             </View>
@@ -79,7 +79,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                                 style={{ width: 16, height: 16, marginVertical: SIZES.padding / 8 }}
                             />
 
-                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: COLORS.black, }}>
+                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, }}>
                                 OFF
                             </Text>
                         </View>
@@ -96,7 +96,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                         }}>
                             <TouchableOpacity>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                                    <Text style={{ ...FONTS.h3, color: COLORS.black }}>Decline</Text>
+                                    <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Decline</Text>
                                     <Image
                                         source={isDark ? icons.ic_close_dark : icons.ic_close_light}
                                         style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
@@ -106,9 +106,9 @@ const AllSwapScreen = ({ navigation }: any) => {
                             <TouchableOpacity>
 
                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                                    <Text style={{ ...FONTS.h3, color: COLORS.black }}>Accept</Text>
+                                    <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Accept</Text>
                                     <Image
-                                        source={isDark ? icons.ic_check_dark : icons.ic_check_light}
+                                        source={isDark ? icons.ic_check_light_dark : icons.ic_check_light}
                                         style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
                                     />
                                 </View>
@@ -129,13 +129,13 @@ const AllSwapScreen = ({ navigation }: any) => {
                     alignItems: 'center'
                 }}>
                     <View>
-                        <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8 }}>Sat, 22nd Oct 2022</Text>
+                        <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Sat, 22nd Oct 2022</Text>
                         <View style={{
                             flexDirection: 'row',
                             justifyContent: 'space-between',
                             alignItems: 'center'
                         }}>
-                            <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: COLORS.black, fontWeight: '600' }}>
+                            <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, fontWeight: '600' }}>
                                 FA0 - BRS - FAO - VLC - FAO
                             </Text>
                             <View style={{
@@ -144,12 +144,12 @@ const AllSwapScreen = ({ navigation }: any) => {
                                 justifyContent: 'center',
                                 alignItems: 'center'
                             }}>
-                                <Text style={{ color: COLORS.black }}>13:05z</Text>
+                                <Text style={{ color: isDark ? COLORS.lightGolden : COLORS.black }}>13:05z</Text>
                                 <Image
-                                    source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
+                                    source={isDark ? icons.ic_plan_dark : icons.ic_logo_icon_light}
                                     style={{ width: 24, height: 24, marginHorizontal: SIZES.padding / 4 }}
                                 />
-                                <Text style={{ color: COLORS.black }}>22:25z</Text>
+                                <Text style={{ color: isDark ? COLORS.lightGolden : COLORS.black }}>22:25z</Text>
 
                             </View>
                         </View>
@@ -162,7 +162,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                             justifyContent: 'space-between',
                             alignItems: 'center'
                         }}>
-                            <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: COLORS.black, fontWeight: '600' }}>
+                            <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, fontWeight: '600' }}>
                                 FA0 - BRS - FAO - VLC - FAO
                             </Text>
                             <View style={{
@@ -171,12 +171,12 @@ const AllSwapScreen = ({ navigation }: any) => {
                                 justifyContent: 'center',
                                 alignItems: 'center'
                             }}>
-                                <Text style={{ color: COLORS.black }}>13:05z</Text>
+                                <Text style={{ color: isDark ? COLORS.lightGolden : COLORS.black }}>13:05z</Text>
                                 <Image
-                                    source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
+                                    source={isDark ? icons.ic_plan_dark : icons.ic_logo_icon_light}
                                     style={{ width: 24, height: 24, marginHorizontal: SIZES.padding / 4 }}
                                 />
-                                <Text style={{ color: COLORS.black }}>22:25z</Text>
+                                <Text style={{ color: isDark ? COLORS.lightGolden : COLORS.black }}>22:25z</Text>
 
                             </View>
                         </View>

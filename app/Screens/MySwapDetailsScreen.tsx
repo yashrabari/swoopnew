@@ -13,7 +13,7 @@ const MySwapDetailsScreen = ({ navigation }: any) => {
 
 
     return (
-        <View style={{ flex: 1, backgroundColor: COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
             <View style={{ marginHorizontal: SIZES.padding }}>
                 <View
                     style={{
@@ -29,8 +29,8 @@ const MySwapDetailsScreen = ({ navigation }: any) => {
 
                 </View>
                 <View style={{ marginVertical: SIZES.padding }}>
-                    <Text style={{ ...FONTS.h1, color: COLORS.black }}>My Swaps</Text>
-                    <Text style={{ ...FONTS.body4, color: COLORS.black }}>Tuesday, 18th October 2022</Text>
+                    <Text style={{ ...FONTS.h1, color: isDark ? COLORS.golden : COLORS.black }}>My Swaps</Text>
+                    <Text style={{ ...FONTS.body4, color: isDark ? COLORS.golden : COLORS.black }}>Tuesday, 18th October 2022</Text>
                 </View>
 
 
@@ -40,15 +40,15 @@ const MySwapDetailsScreen = ({ navigation }: any) => {
                     alignItems: 'center'
                 }}>
                     <View>
-                        <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8 }}>Sun, 23nd Oct 2022</Text>
-                        <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: COLORS.black, fontWeight: '600' }}>
+                        <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Sun, 23nd Oct 2022</Text>
+                        <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, fontWeight: '600' }}>
                             FA0 - BRS - FAO - VLC - FAO
                         </Text>
                         <Image
                             source={isDark ? icons.ic_exchange_dark : icons.ic_exchange_light}
                             style={{ width: 16, height: 16, marginVertical: SIZES.padding / 8 }}
                         />
-                        <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: COLORS.black, }}>
+                        <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, }}>
                             STANDBY
                         </Text>
                     </View>
@@ -63,12 +63,12 @@ const MySwapDetailsScreen = ({ navigation }: any) => {
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: SIZES.padding }}>
                     <View style={{ flexDirection: 'row', flex: 1, alignItems: 'center', }}>
                         <View style={{ width: SIZES.base, height: SIZES.base, borderRadius: SIZES.base, backgroundColor: COLORS.white }}></View>
-                        <Text style={{ ...FONTS.h4, color: COLORS.red, marginLeft: SIZES.padding }}>STANDBY</Text>
+                        <Text style={{ ...FONTS.h4, color: isDark ? COLORS.lightBlue : COLORS.red, marginLeft: SIZES.padding }}>STANDBY</Text>
                     </View>
                     <View style={{ flexDirection: 'row', flex: 1, alignItems: 'center', justifyContent: 'flex-end' }}>
-                        <Text style={{ color: COLORS.red }}>13:00z</Text>
-                        <Image source={icons.ic_plan_red_light} style={{ width: 24, height: 24, marginHorizontal: SIZES.padding / 2 }} />
-                        <Text style={{ color: COLORS.red }}>23:00z</Text>
+                        <Text style={{ color: isDark ? COLORS.lightBlue : COLORS.red }}>13:00z</Text>
+                        <Image source={isDark ? icons.ic_plan_blue_dark : icons.ic_plan_red_light} style={{ width: 24, height: 24, marginHorizontal: SIZES.padding / 2 }} />
+                        <Text style={{ color: isDark ? COLORS.lightBlue : COLORS.red }}>23:00z</Text>
                     </View>
                 </View>
                 <View style={{
@@ -78,7 +78,7 @@ const MySwapDetailsScreen = ({ navigation }: any) => {
                 }}>
                     <TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                            <Text style={{ ...FONTS.h3, color: COLORS.black }}>Decline</Text>
+                            <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.black }}>Decline</Text>
                             <Image
                                 source={isDark ? icons.ic_close_dark : icons.ic_close_light}
                                 style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
@@ -88,9 +88,9 @@ const MySwapDetailsScreen = ({ navigation }: any) => {
                     <TouchableOpacity>
 
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                            <Text style={{ ...FONTS.h3, color: COLORS.black }}>Accept</Text>
+                            <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.black }}>Accept</Text>
                             <Image
-                                source={isDark ? icons.ic_check_dark : icons.ic_check_light}
+                                source={isDark ? icons.ic_check_light_dark : icons.ic_check_light}
                                 style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
                             />
                         </View>

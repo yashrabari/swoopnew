@@ -13,7 +13,7 @@ const MySwapScreen = ({ navigation }: any) => {
 
 
     return (
-        <View style={{ flex: 1, backgroundColor: COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
             <View style={{ marginHorizontal: SIZES.padding }}>
                 <View
                     style={{
@@ -34,8 +34,8 @@ const MySwapScreen = ({ navigation }: any) => {
                     </TouchableOpacity>
                 </View>
                 <View style={{ marginVertical: SIZES.padding }}>
-                    <Text style={{ ...FONTS.h1, color: COLORS.black }}>My Swaps</Text>
-                    <Text style={{ ...FONTS.body4, color: COLORS.black }}>Tuesday, 18th October 2022</Text>
+                    <Text style={{ ...FONTS.h1, color: isDark ? COLORS.golden : COLORS.black }}>My Swaps</Text>
+                    <Text style={{ ...FONTS.body4, color: isDark ? COLORS.golden : COLORS.black }}>Tuesday, 18th October 2022</Text>
                 </View>
 
 
@@ -52,15 +52,15 @@ const MySwapScreen = ({ navigation }: any) => {
                         alignItems: 'center'
                     }}>
                         <View>
-                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8 }}>Sat, 22nd Oct 2022</Text>
-                            <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: COLORS.black, fontWeight: '600' }}>
+                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Sat, 22nd Oct 2022</Text>
+                            <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, fontWeight: '600' }}>
                                 FA0 - BRS - FAO - VLC - FAO
                             </Text>
                             <Image
                                 source={isDark ? icons.ic_exchange_dark : icons.ic_exchange_light}
                                 style={{ width: 16, height: 16, marginVertical: SIZES.padding / 8 }}
                             />
-                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: COLORS.black, }}>
+                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, }}>
                                 OFF
                             </Text>
                         </View>
@@ -90,7 +90,7 @@ const MySwapScreen = ({ navigation }: any) => {
                                 <TouchableOpacity>
 
                                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                                        <Text style={{ ...FONTS.h3, color: COLORS.black }}>DELETE</Text>
+                                        <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.black }}>DELETE</Text>
                                         <Image
                                             source={isDark ? icons.ic_close_dark : icons.ic_close_light}
                                             style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
@@ -103,7 +103,7 @@ const MySwapScreen = ({ navigation }: any) => {
                 </TouchableOpacity>
                 <View style={{
                     borderWidth: .5,
-                    borderColor: COLORS.darkGray,
+                    borderColor: isDark ? COLORS.lightGolden : COLORS.darkGray,
                     marginVertical: SIZES.padding / 2
                 }}></View>
 
@@ -114,15 +114,15 @@ const MySwapScreen = ({ navigation }: any) => {
                         alignItems: 'center'
                     }}>
                         <View>
-                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8 }}>Sun, 23nd Oct 2022</Text>
-                            <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: COLORS.black, fontWeight: '600' }}>
+                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Sun, 23nd Oct 2022</Text>
+                            <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, fontWeight: '600' }}>
                                 FA0 - BRS - FAO - VLC - FAO
                             </Text>
                             <Image
                                 source={isDark ? icons.ic_exchange_dark : icons.ic_exchange_light}
                                 style={{ width: 16, height: 16, marginVertical: SIZES.padding / 8 }}
                             />
-                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: COLORS.black, }}>
+                            <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, }}>
                                 STANDBY
                             </Text>
                         </View>

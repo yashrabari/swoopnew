@@ -20,7 +20,7 @@ const LoginScreen = ({ navigation }: any) => {
         <View
             style={{
                 flex: 1,
-                backgroundColor: COLORS.gray
+                backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray
             }}>
             <View style={{ flex: 2 }}>
                 <View
@@ -34,13 +34,13 @@ const LoginScreen = ({ navigation }: any) => {
                 </View>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginVertical: SIZES.padding / 2 }}>
                     <Image
-                        source={isDark ? icons.ic_plan_dark : icons.ic_plan_light}
+                        source={isDark ? icons.ic_logo_icon_dark : icons.ic_logo_icon_light}
                         style={{ width: 50, height: 50 }}
                     />
                     <Text
                         style={{
                             ...FONTS.h3,
-                            color: COLORS.black,
+                            color: isDark ? COLORS.golden : COLORS.black,
                             marginVertical: SIZES.padding
                         }}>
                         Welcome to Swoop!
@@ -63,7 +63,7 @@ const LoginScreen = ({ navigation }: any) => {
                             placeholder="Username"
                             style={{ ...FONTS.h3, marginLeft: SIZES.padding }}
                             //   secureTextEntry = {true}
-                            placeholderTextColor={COLORS.black}
+                            placeholderTextColor={isDark ? COLORS.lightGolden : COLORS.darkGray}
                             onChangeText={value => {
                                 setUserName(value);
                             }}
@@ -83,7 +83,7 @@ const LoginScreen = ({ navigation }: any) => {
                             placeholder="Password"
                             style={{ ...FONTS.h3, marginLeft: SIZES.padding }}
                             secureTextEntry={true}
-                            placeholderTextColor={COLORS.black}
+                            placeholderTextColor={isDark ? COLORS.lightGolden : COLORS.darkGray}
                             onChangeText={value => {
                                 setPassword(value);
                             }}
@@ -109,15 +109,15 @@ const LoginScreen = ({ navigation }: any) => {
                             }}
                             onPress={() => navigation.navigate('MyCustomTabs')}
                         >
-                            <Text style={{ ...FONTS.h2, color: COLORS.black }}>
+                            <Text style={{ ...FONTS.h2, color: isDark ? COLORS.golden : COLORS.black }}>
                                 Log In
                             </Text>
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                        <View style={{ borderColor: COLORS.darkGray, borderBottomWidth: 1, width: SIZES.width / 4 }}></View>
-                        <Text style={{ marginHorizontal: SIZES.padding / 2, color: COLORS.darkGray, ...FONTS.body3 }}>or continue with</Text>
-                        <View style={{ borderColor: COLORS.darkGray, borderBottomWidth: 1, width: SIZES.width / 4 }}></View>
+                        <View style={{ borderColor: isDark ? COLORS.lightGolden : COLORS.darkGray, borderBottomWidth: 1, width: SIZES.width / 4 }}></View>
+                        <Text style={{ marginHorizontal: SIZES.padding / 2, color: isDark ? COLORS.lightGolden : COLORS.darkGray, ...FONTS.body3 }}>or continue with</Text>
+                        <View style={{ borderColor: isDark ? COLORS.lightGolden : COLORS.darkGray, borderBottomWidth: 1, width: SIZES.width / 4 }}></View>
                     </View>
 
                     <View
@@ -136,6 +136,7 @@ const LoginScreen = ({ navigation }: any) => {
                         <TouchableOpacity style={{ marginHorizontal: SIZES.padding }}>
                             <Image
                                 source={isDark ? icons.ic_apple_dark : icons.ic_apple_light}
+                                resizeMode="contain"
                                 style={{ width: 36, height: 36 }}
                             />
                         </TouchableOpacity>
@@ -147,7 +148,7 @@ const LoginScreen = ({ navigation }: any) => {
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'center', marginVertical: SIZES.padding, }}>
-                        <Text style={{ ...FONTS.h4, color: COLORS.black, marginRight: SIZES.padding / 4 }}>
+                        <Text style={{ ...FONTS.h4, color: isDark ? COLORS.golden : COLORS.black, marginRight: SIZES.padding / 4 }}>
                             Not a member?
                         </Text>
                         <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>

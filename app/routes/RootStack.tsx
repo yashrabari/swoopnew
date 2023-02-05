@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,13 +14,22 @@ import TermsNCondition from '../Screens/TermsNCondition';
 import DeleteAccountScreen from '../Screens/DeleteAccountScreen';
 import DeleteAccountConfirmationScreen from '../Screens/DeleteAccountConfirmationScreen';
 import DeleteAccountReviewScreen from '../Screens/DeleteAccountReviewScreen';
+import { StatusBar } from 'react-native';
+import { ThemeContext } from '../Contexts/ThemeContext';
+import { COLORS } from '../constants';
 
 
 export default function RootStack() {
     const Stack = createNativeStackNavigator();
 
+
+    const { isDark } = useContext(ThemeContext)
+
+    console.log(isDark)
+
     return (
         <NavigationContainer>
+            <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={isDark ? COLORS.bgBlack : COLORS.gray} />
             <Stack.Navigator initialRouteName='LoginScreen' screenOptions={{ headerShown: false }} >
                 <Stack.Screen name="LoginScreen" component={LoginScreen} />
                 <Stack.Screen name="SignUpScreen" component={SignUpScreen} />

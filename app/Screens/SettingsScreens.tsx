@@ -54,7 +54,7 @@ const SettingScreen = ({ navigation }: any) => {
                 style={{ width: 27, height: 27 }}
                 source={isDark ? icons.ic_airline_dark : icons.ic_airline_light}
               />
-              <Text style={styles.inputField} >Airlines</Text>
+              <Text style={[styles.inputField, { color: isDark ? COLORS.lightGolden : COLORS.darkGray }]} >Airlines</Text>
 
               <Image
                 style={{ width: 16, height: 16, marginLeft: SIZES.padding * 2 }}
@@ -70,7 +70,7 @@ const SettingScreen = ({ navigation }: any) => {
               <TextInput
                 placeholder="Homebase"
                 style={styles.inputField}
-                placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
+                placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
                 onChangeText={value => {
                   setUserName(value);
                 }}
@@ -85,7 +85,7 @@ const SettingScreen = ({ navigation }: any) => {
               <TextInput
                 placeholder="Crewcode"
                 style={styles.inputField}
-                placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
+                placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
 
               />
             </View>
@@ -96,7 +96,7 @@ const SettingScreen = ({ navigation }: any) => {
                   source={isDark ? icons.ic_position_dark : icons.ic_position_light}
                   style={{ width: 27, height: 27 }}
                 />
-                <Text style={styles.inputField} >Position</Text>
+                <Text style={[styles.inputField, { color: isDark ? COLORS.lightGolden : COLORS.darkGray }]} >Position</Text>
               </View>
               <View style={{ marginHorizontal: SIZES.padding * 2 }}>
                 <View style={styles.checkBoxContainer}>
@@ -121,7 +121,7 @@ const SettingScreen = ({ navigation }: any) => {
                   style={{ width: 27, height: 27 }}
                 />
                 <Text
-                  style={styles.inputField}
+                  style={[styles.inputField, { color: isDark ? COLORS.lightGolden : COLORS.darkGray }]}
                 >{isDark ? "Light Mode" : "Dark mode"}</Text>
               </View>
             </TouchableOpacity>
@@ -173,7 +173,7 @@ const SettingScreen = ({ navigation }: any) => {
               <TextInput
                 placeholder="Email"
                 style={styles.inputField}
-                placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
+                placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
                 onChangeText={value => {
                   setUserName(value);
                 }}
@@ -188,7 +188,7 @@ const SettingScreen = ({ navigation }: any) => {
               <TextInput
                 placeholder="Password"
                 style={styles.inputField}
-                placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
+                placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
 
               />
             </View>
@@ -201,7 +201,7 @@ const SettingScreen = ({ navigation }: any) => {
               <TextInput
                 placeholder="Confirm Password"
                 style={styles.inputField}
-                placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
+                placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
 
               />
             </View>
@@ -279,7 +279,7 @@ const SettingScreen = ({ navigation }: any) => {
                   source={isDark ? icons.ic_about_dark : icons.ic_about_light}
                   style={{ width: 27, height: 27 }}
                 />
-                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.black }]}>About us</Text>
+                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.darkGray }]}>About us</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('ContactUs')}>
@@ -289,7 +289,7 @@ const SettingScreen = ({ navigation }: any) => {
                   source={isDark ? icons.ic_contact_dark : icons.ic_contact_light}
                   style={{ width: 27, height: 27 }}
                 />
-                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.black }]}>Contact Us</Text>
+                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.darkGray }]}>Contact Us</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('TermsNCondition')}>
@@ -299,7 +299,7 @@ const SettingScreen = ({ navigation }: any) => {
                   source={isDark ? icons.ic_terms_dark : icons.ic_terms_light}
                   style={{ width: 27, height: 27 }}
                 />
-                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.black }]}>Terms & Conditions</Text>
+                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.darkGray }]}>Terms & Conditions</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('DeleteAccount')}>
@@ -309,7 +309,7 @@ const SettingScreen = ({ navigation }: any) => {
                   source={isDark ? icons.ic_delete_account_dark : icons.ic_delete_account_light}
                   style={{ width: 27, height: 27 }}
                 />
-                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.black }]}>Delete Account</Text>
+                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.darkGray }]}>Delete Account</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
@@ -319,7 +319,7 @@ const SettingScreen = ({ navigation }: any) => {
                   source={isDark ? icons.ic_logout_dark : icons.ic_logout_light}
                   style={{ width: 27, height: 27 }}
                 />
-                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.black }]}>logout</Text>
+                <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.darkGray }]}>logout</Text>
               </View>
             </TouchableOpacity>
 

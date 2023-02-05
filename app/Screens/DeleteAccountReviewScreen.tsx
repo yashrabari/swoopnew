@@ -64,7 +64,7 @@ export default function DeleteAccountReviewScreen({ navigation }: any) {
 
 
                         <View>
-                            <TextInput placeholder='Your Explanation is entirely optional..' multiline={true} cursorColor={isDark ? COLORS.golden : COLORS.black} style={{ ...FONTS.body3, marginVertical: SIZES.padding, color: isDark ? COLORS.lightGolden : COLORS.black }} placeholderTextColor={isDark ? COLORS.lightGolden : COLORS.black} />
+                            <TextInput placeholder='Your Explanation is entirely optional..' multiline={true} cursorColor={isDark ? COLORS.golden : COLORS.black} style={{ ...FONTS.body3, marginVertical: SIZES.padding, color: isDark ? COLORS.lightGolden : COLORS.black }} placeholderTextColor={isDark ? COLORS.lightGolden : COLORS.darkGray} />
                         </View>
                     </View>
                 </View>

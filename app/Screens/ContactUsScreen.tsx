@@ -43,7 +43,7 @@ export default function ContactUsScreen({ navigation }: any) {
                         <TextInput
                             placeholder="Name"
                             style={styles.inputField}
-                            placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
+                            placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
 
                         />
                     </View>
@@ -56,7 +56,7 @@ export default function ContactUsScreen({ navigation }: any) {
                         <TextInput
                             placeholder="Email"
                             style={styles.inputField}
-                            placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
+                            placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
 
                         />
                     </View>
@@ -69,7 +69,7 @@ export default function ContactUsScreen({ navigation }: any) {
                         <TextInput
                             placeholder="Subject"
                             style={styles.inputField}
-                            placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
+                            placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
 
                         />
                     </View>
@@ -83,7 +83,7 @@ export default function ContactUsScreen({ navigation }: any) {
                         <TextInput
                             placeholder="Message"
                             style={styles.inputField}
-                            placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
+                            placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
 
                         />
                     </View>
