@@ -49,7 +49,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                         justifyContent: 'space-between',
                         alignItems: 'center'
                     }}>
-                        <View>
+                        <View style={{ marginLeft: SIZES.padding }}>
                             <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Sat, 22nd Oct 2022</Text>
                             <View style={{
                                 flexDirection: 'row',
