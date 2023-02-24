@@ -2,20 +2,42 @@ import React, {
     useContext,
     useState
 } from 'react'
-import { Image, Text, TextInput, View, StyleSheet, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { Image, Text, TextInput, View, StyleSheet, FlatList, TouchableOpacity, KeyboardAvoidingView, ScrollView, SafeAreaView } from 'react-native';
 import { COLORS, FONTS, icons, SIZES } from '../constants';
-import DatePicker from 'react-native-date-picker'
 import { ThemeContext } from '../Contexts/ThemeContext';
-import CustomDropDown from '../Components/CustomDropDown';
+
+
+const dropDownOptions = [
+    {
+        key: '1',
+        option: 'Off'
+    },
+    {
+        key: '2',
+        option: 'Standby'
+    },
+    {
+        key: '3',
+        option: 'Flight'
+    },
+    {
+        key: '4',
+        option: 'Specific Flight'
+    }
+]
+
+
 
 export default function InReturns({ navigation }: any) {
     const [date, setDate] = useState(new Date())
     const [open, setOpen] = useState(false)
+    const [dropDownOpen, setDropDownOpen] = useState(false)
+    const [selectDropDownKey, setSelectedDropDownKey] = useState('null')
 
     const { isDark } = useContext(ThemeContext)
 
     return (
-        <ScrollView style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2, }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2, }}>
             <View style={{ marginHorizontal: SIZES.padding, }}>
                 <View
                     style={{
@@ -43,25 +65,46 @@ export default function InReturns({ navigation }: any) {
             <View style={styles.midPart}>
                 <View style={styles.form}>
 
-                    <View
-                        style={styles.inputFieldComponent}>
+                    <TouchableOpacity
+                        onPress={() => { setDropDownOpen(!dropDownOpen) }}
+                        style={{ ...styles.inputFieldComponent, alignItems: 'center' }}>
                         <Image
                             source={isDark ? icons.ic_duty_dark : icons.ic_duty_light}
                             style={{ width: 27, height: 27 }}
                         />
                         <Text style={{ color: isDark ? COLORS.lightGolden : COLORS.darkGray, ...FONTS.h3, ...styles.inputField }}>Duty Type</Text>
                         <Image
-                            style={{ width: 16, height: 16, marginLeft: SIZES.padding * 2 }}
                             source={isDark ? icons.ic_down_dark : icons.ic_down_light}
+                            style={{ marginHorizontal: SIZES.padding * 2, width: 16, height: 16 }}
                         />
 
-                    </View>
+                    </TouchableOpacity>
+                    {
+                        dropDownOpen && (
+                            <View>
+                                <FlatList
+                                    data={dropDownOptions}
+                                    keyExtractor={(i) => i.key}
+                                    renderItem={({ item }) => {
+                                        return (
+                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: SIZES.padding / 2 }}>
+                                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black, ...FONTS.h3, marginLeft: SIZES.padding + 27 }}>{item.option}</Text>
+                                                <TouchableOpacity onPress={() => setSelectedDropDownKey(item.key)}>
+                                                    <Image style={{ width: 27, height: 27 }} source={selectDropDownKey !== item.key ? (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light) : (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light)} />
+                                                </TouchableOpacity>
+                                            </View>
+                                        )
+                                    }}
+                                />
+                            </View>
+                        )
+                    }
 
 
                 </View>
 
             </View>
-            <View style={{
+            {/* <View style={{
                 flex: 1,
                 paddingHorizontal: SIZES.padding,
                 marginVertical: SIZES.padding
@@ -215,8 +258,8 @@ export default function InReturns({ navigation }: any) {
 
                     </View>
                 </View>
-            </View>
-            <View style={{ marginHorizontal: SIZES.padding, flexDirection: 'row', alignItems: 'center', flex: 1 }}>
+            </View> */}
+            <View style={{ marginHorizontal: SIZES.padding, flexDirection: 'row', position: 'absolute', bottom: SIZES.padding * 2, alignItems: 'center', flex: 1 }}>
                 <Image
                     source={isDark ? icons.ic_comment_dark : icons.ic_comment_light}
                     style={{ width: 27, height: 27 }}
@@ -227,7 +270,7 @@ export default function InReturns({ navigation }: any) {
                     placeholderTextColor={isDark ? COLORS.golden : COLORS.black}
                 />
             </View>
-        </ScrollView>
+        </SafeAreaView>
     )
 }
 

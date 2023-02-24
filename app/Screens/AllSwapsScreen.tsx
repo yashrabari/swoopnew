@@ -21,7 +21,7 @@ const AllSwapScreen = ({ navigation }: any) => {
 
     return (
         <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
-            <View style={{ marginHorizontal:SIZES.padding }}>
+            <View style={{ marginHorizontal: SIZES.padding }}>
                 <View
                     style={{
                         justifyContent: 'space-between',
@@ -49,7 +49,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                         justifyContent: 'space-between',
                         alignItems: 'center'
                     }}>
-                        <View style={{  }}>
+                        <View style={{}}>
                             <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Sat, 22nd Oct 2022</Text>
                             <View style={{
                                 flexDirection: 'row',
@@ -60,7 +60,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                                     FA0 - BRS - FAO - VLC - FAO
                                 </Text>
                                 <View style={{
-                                    marginLeft: SIZES.padding/2 ,
+                                    marginLeft: SIZES.padding / 2,
                                     flexDirection: 'row',
                                     justifyContent: 'space-between',
                                     alignItems: 'center'
@@ -139,7 +139,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                                 FA0 - BRS - FAO - VLC - FAO
                             </Text>
                             <View style={{
-                                marginLeft:SIZES.padding/2,
+                                marginLeft: SIZES.padding / 2,
                                 //marginLeft: SIZES.padding,
                                 flexDirection: 'row',
                                 //justifyContent: 'space-between',
@@ -167,7 +167,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                                 FA0 - BRS - FAO - VLC - FAO
                             </Text>
                             <View style={{
-                                marginLeft: SIZES.padding/2,
+                                marginLeft: SIZES.padding / 2,
                                 flexDirection: 'row',
                                 justifyContent: 'center',
                                 alignItems: 'center'

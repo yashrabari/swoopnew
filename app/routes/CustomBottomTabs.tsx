@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Image, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import MySwapScreen from '../Screens/MySwapScreen';
@@ -10,8 +10,9 @@ import { icons, COLORS, SIZES, FONTS } from '../constants';
 
 import SettingsScreens from '../Screens/SettingsScreens';
 import AllSwapScreen from '../Screens/AllSwapsScreen';
-import InReturns from '../Screens/InReturns';
+import SearchScreen from '../Screens/SearchScreen';
 import { ThemeContext } from '../Contexts/ThemeContext';
+import InReturns from '../Screens/InReturns';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,6 +44,7 @@ function CustomBottomTab({ state, descriptors, navigation }: any) {
                     }}>
                         <TouchableOpacity
                             onPress={() => {
+                                navigation.navigate('SearchScreen')
                             }}>
                             <Image
                                 source={isDark ? icons.ic_search_dark : icons.ic_search_light}
@@ -59,7 +61,7 @@ function CustomBottomTab({ state, descriptors, navigation }: any) {
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => {
-                                navigation.navigate('InReturns')
+                                navigation.navigate('AllSwapScreen')
                             }}>
                             <Image
                                 source={isDark ? icons.ic_repeat_dark : icons.ic_repeat_light}
@@ -104,13 +106,14 @@ export default function MyTabs() {
             screenOptions={{
                 headerShown: false
             }}
-            initialRouteName='Home'
+            initialRouteName='MySwapScreen'
             tabBar={props => <CustomBottomTab {...props} />}
         >
-            <Tab.Screen name="Home" component={AllSwapScreen} />
             <Tab.Screen name="MySwapScreen" component={MySwapScreen} />
+            <Tab.Screen name="SearchScreen" component={SearchScreen} />
+            <Tab.Screen name="InReturnsScreen" component={InReturns} />
             <Tab.Screen name="SettingScreen" component={SettingsScreens} />
-            <Tab.Screen name="InReturns" component={InReturns} />
+            <Tab.Screen name="AllSwapScreen" component={AllSwapScreen} />
         </Tab.Navigator>
     );
 }

@@ -2,14 +2,43 @@ import React, {
     useState,
     useContext
 } from 'react'
-import { Image, Text, TextInput, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, Text, FlatList, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS, FONTS, icons, SIZES } from '../constants';
 import DatePicker from 'react-native-date-picker'
 import { ThemeContext } from '../Contexts/ThemeContext';
+import { Picker } from '@react-native-picker/picker';
+
+
+
+const dropDownOptions = [
+    {
+        key: '1',
+        option: 'Off'
+    },
+    {
+        key: '2',
+        option: 'Standby'
+    },
+    {
+        key: '3',
+        option: 'Flight'
+    },
+    {
+        key: '4',
+        option: 'Specific Flight'
+    }
+]
+
 
 export default function CreateSwapScreen({ navigation }: any) {
     const [date, setDate] = useState(new Date())
     const [open, setOpen] = useState(false)
+    const [dropDownOpen, setDropDownOpen] = useState(false)
+    const [selectDropDownKey, setSelectedDropDownKey] = useState('null')
+
+
+
+
 
 
     const { isDark } = useContext(ThemeContext)
@@ -29,7 +58,7 @@ export default function CreateSwapScreen({ navigation }: any) {
                             style={{ width: 28, height: 28 }}
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => { navigation.goBack() }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("InReturnsScreen") }}>
                         <Image
                             source={isDark ? icons.ic_check_dark : icons.ic_check_light}
                             style={{ width: 28, height: 28 }}
@@ -55,7 +84,7 @@ export default function CreateSwapScreen({ navigation }: any) {
                         </View>
                     </TouchableOpacity>
                     <DatePicker
-
+                        mode='date'
                         modal
                         open={open}
                         date={date}
@@ -67,7 +96,8 @@ export default function CreateSwapScreen({ navigation }: any) {
                             setOpen(false)
                         }}
                     />
-                    <View
+                    <TouchableOpacity
+                        onPress={() => { setDropDownOpen(!dropDownOpen) }}
                         style={{ ...styles.inputFieldComponent, alignItems: 'center' }}>
                         <Image
                             source={isDark ? icons.ic_duty_dark : icons.ic_duty_light}
@@ -79,13 +109,32 @@ export default function CreateSwapScreen({ navigation }: any) {
                             style={{ marginHorizontal: SIZES.padding * 2, width: 16, height: 16 }}
                         />
 
-                    </View>
-
+                    </TouchableOpacity>
+                    {
+                        dropDownOpen && (
+                            <View>
+                                <FlatList
+                                    data={dropDownOptions}
+                                    keyExtractor={(i) => i.key}
+                                    renderItem={({ item }) => {
+                                        return (
+                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: SIZES.padding / 2 }}>
+                                                <Text style={{ color: isDark ? COLORS.golden : COLORS.black, ...FONTS.h3, marginLeft: SIZES.padding + 27 }}>{item.option}</Text>
+                                                <TouchableOpacity onPress={() => setSelectedDropDownKey(item.key)}>
+                                                    <Image style={{ width: 27, height: 27 }} source={selectDropDownKey !== item.key ? (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light) : (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light)} />
+                                                </TouchableOpacity>
+                                            </View>
+                                        )
+                                    }}
+                                />
+                            </View>
+                        )
+                    }
 
                 </View>
 
             </View>
-            <View style={{
+            {/* <View style={{
                 flex: 1,
                 paddingHorizontal: SIZES.padding,
                 marginVertical: SIZES.padding
@@ -239,7 +288,7 @@ export default function CreateSwapScreen({ navigation }: any) {
 
                     </View>
                 </View>
-            </View>
+            </View> */}
         </View>
     )
 }
