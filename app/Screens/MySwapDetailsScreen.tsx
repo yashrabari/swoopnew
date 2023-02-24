@@ -39,7 +39,7 @@ const MySwapDetailsScreen = ({ navigation }: any) => {
                     justifyContent: 'space-between',
                     alignItems: 'center'
                 }}>
-                    <View style={{ marginLeft: SIZES.padding }}>
+                    <View style={{  }}>
                         {/* <View> */}
                         <Text style={{ ...FONTS.h4, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.lightGolden : COLORS.darkGray }}>Sun, 23nd Oct 2022</Text>
                         <Text style={{ ...FONTS.h3, marginVertical: SIZES.padding / 8, color: isDark ? COLORS.golden : COLORS.black, fontWeight: '600' }}>
