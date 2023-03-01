@@ -10,11 +10,22 @@ const SignUpScreen = ({ navigation }: any) => {
     const [Password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [index, setIndex] = useState(0)
-    const [isChecked, setIsChecked] = useState(false)
+    const [position, setPosition] = useState("")
     const [isTCChecked, setIsTCChecked] = useState(false)
 
     const { isDark } = useContext(ThemeContext)
 
+
+    const [dotIndex, setDotIndex] = useState({
+        firstIndex: false,
+        secondIndex: false,
+        thirdIndex: false,
+        fourthIndex: false,
+        fifthIndex: false,
+        sixthIndex: false,
+        seventhIndex: false,
+        eighthIndex: false
+    })
 
 
     return (
@@ -24,7 +35,7 @@ const SignUpScreen = ({ navigation }: any) => {
             activeDot={<View style={{ backgroundColor: COLORS.white, marginHorizontal: SIZES.padding / 2, width: SIZES.base, height: SIZES.base, borderRadius: SIZES.base, }} />}
             dot={<View style={{ backgroundColor: COLORS.black, marginHorizontal: SIZES.padding / 2, width: SIZES.base, height: SIZES.base, borderRadius: SIZES.base, }} />}
         >
-            <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+            <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
                 <View style={{ marginHorizontal: SIZES.padding, }}>
                     <View
                         style={{
@@ -61,6 +72,11 @@ const SignUpScreen = ({ navigation }: any) => {
                                 placeholderTextColor={isDark ? COLORS.gray : COLORS.black}
                                 onChangeText={value => {
                                     setUserName(value);
+                                    if (value) {
+                                        setDotIndex({ ...dotIndex, firstIndex: true })
+                                    } else {
+                                        setDotIndex({ ...dotIndex, firstIndex: false })
+                                    }
                                 }}
                             />
                         </View>
@@ -77,6 +93,11 @@ const SignUpScreen = ({ navigation }: any) => {
                                 placeholderTextColor={isDark ? COLORS.gray : COLORS.black}
                                 onChangeText={value => {
                                     setEmail(value);
+                                    if (value) {
+                                        setDotIndex({ ...dotIndex, secondIndex: true })
+                                    } else {
+                                        setDotIndex({ ...dotIndex, secondIndex: false })
+                                    }
                                 }}
                             />
                         </View>
@@ -96,6 +117,11 @@ const SignUpScreen = ({ navigation }: any) => {
                                 placeholderTextColor={isDark ? COLORS.gray : COLORS.black}
                                 onChangeText={value => {
                                     setPassword(value);
+                                    if (value) {
+                                        setDotIndex({ ...dotIndex, thirdIndex: true })
+                                    } else {
+                                        setDotIndex({ ...dotIndex, thirdIndex: false })
+                                    }
                                 }}
                             />
                         </View>
@@ -113,6 +139,11 @@ const SignUpScreen = ({ navigation }: any) => {
                                 placeholderTextColor={isDark ? COLORS.gray : COLORS.black}
                                 onChangeText={value => {
                                     setConfirmPassword(value);
+                                    if (value) {
+                                        setDotIndex({ ...dotIndex, fourthIndex: true })
+                                    } else {
+                                        setDotIndex({ ...dotIndex, fourthIndex: false })
+                                    }
                                 }}
                             />
                         </View>
@@ -132,12 +163,12 @@ const SignUpScreen = ({ navigation }: any) => {
                     </View>
                     <View style={styles.elipsPart}>
                         <View
-                            style={styles.elips}
+                            style={{ ...styles.elips, backgroundColor: dotIndex.firstIndex ? COLORS.white : COLORS.black }}
                         >
                         </View>
-                        <View style={styles.elips}></View>
-                        <View style={styles.elips}></View>
-                        <View style={styles.elips}></View>
+                        <View style={{ ...styles.elips, backgroundColor: dotIndex.secondIndex ? COLORS.white : COLORS.black }}></View>
+                        <View style={{ ...styles.elips, backgroundColor: dotIndex.thirdIndex ? COLORS.white : COLORS.black }}></View>
+                        <View style={{ ...styles.elips, backgroundColor: dotIndex.fourthIndex ? COLORS.white : COLORS.black }}></View>
                     </View>
                 </View>
                 <View style={styles.bottomPart}>
@@ -145,7 +176,7 @@ const SignUpScreen = ({ navigation }: any) => {
 
                 </View>
             </View>
-            <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+            <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
                 <View style={{ marginHorizontal: SIZES.padding, }}>
                     <View
                         style={{
@@ -196,6 +227,11 @@ const SignUpScreen = ({ navigation }: any) => {
                                 placeholderTextColor={isDark ? COLORS.lightGolden : COLORS.darkGray}
                                 onChangeText={value => {
                                     setUserName(value);
+                                    if (value) {
+                                        setDotIndex({ ...dotIndex, sixthIndex: true })
+                                    } else {
+                                        setDotIndex({ ...dotIndex, sixthIndex: false })
+                                    }
                                 }}
                             />
                         </View>
@@ -211,6 +247,11 @@ const SignUpScreen = ({ navigation }: any) => {
                                 placeholderTextColor={isDark ? COLORS.lightGolden : COLORS.darkGray}
                                 onChangeText={value => {
                                     setEmail(value);
+                                    if (value) {
+                                        setDotIndex({ ...dotIndex, seventhIndex: true })
+                                    } else {
+                                        setDotIndex({ ...dotIndex, seventhIndex: false })
+                                    }
                                 }}
                             />
                         </View>
@@ -225,15 +266,21 @@ const SignUpScreen = ({ navigation }: any) => {
                             </View>
                             <View style={{ marginHorizontal: SIZES.padding * 2 }}>
                                 <View style={styles.checkBoxContainer}>
-                                    <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>Captaine</Text>
-                                    <TouchableOpacity onPress={() => setIsChecked(!isChecked)}>
-                                        <Image style={{ width: 24, height: 24 }} source={isChecked ? (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light) : (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light)} />
+                                    <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>Captain</Text>
+                                    <TouchableOpacity onPress={() => {
+                                        setPosition("captain")
+                                        setDotIndex({ ...dotIndex, eighthIndex: true })
+                                    }}>
+                                        <Image style={{ width: 24, height: 24 }} source={position === "captain" ? (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light) : (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light)} />
                                     </TouchableOpacity>
                                 </View>
                                 <View style={styles.checkBoxContainer}>
                                     <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>First Officer</Text>
-                                    <TouchableOpacity onPress={() => setIsChecked(!isChecked)}>
-                                        <Image style={{ width: 24, height: 24 }} source={!isChecked ? (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light) : (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light)} />
+                                    <TouchableOpacity onPress={() => {
+                                        setPosition("firstOfficer")
+                                        setDotIndex({ ...dotIndex, eighthIndex: true })
+                                    }}>
+                                        <Image style={{ width: 24, height: 24 }} source={position === "firstOfficer" ? (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light) : (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light)} />
                                     </TouchableOpacity>
                                 </View>
                             </View>
@@ -242,10 +289,10 @@ const SignUpScreen = ({ navigation }: any) => {
                     </View>
                     <View style={styles.elipsPart}>
 
-                        <View style={styles.elips}></View>
-                        <View style={styles.elips}></View>
-                        <View style={styles.elips}></View>
-                        <View style={styles.elips}></View>
+                        <View style={{ ...styles.elips, backgroundColor: dotIndex.fifthIndex ? COLORS.white : COLORS.black }}></View>
+                        <View style={{ ...styles.elips, backgroundColor: dotIndex.sixthIndex ? COLORS.white : COLORS.black }}></View>
+                        <View style={{ ...styles.elips, backgroundColor: dotIndex.seventhIndex ? COLORS.white : COLORS.black }}></View>
+                        <View style={{ ...styles.elips, backgroundColor: dotIndex.eighthIndex ? COLORS.white : COLORS.black }}></View>
                     </View>
                 </View>
                 <View style={styles.bottomPart}>
@@ -291,7 +338,6 @@ const styles = StyleSheet.create({
         height: SIZES.base,
         width: SIZES.base,
         borderRadius: SIZES.base,
-        backgroundColor: COLORS.white
     },
     bottomPart: {
         flex: 1,

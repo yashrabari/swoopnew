@@ -170,7 +170,7 @@ const ForgotPasswordScreen = ({ navigation }: any) => {
 
 
     return (
-        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
             {renderHeader()}
             <Swiper
                 onIndexChanged={(index) => setIndex(index)}

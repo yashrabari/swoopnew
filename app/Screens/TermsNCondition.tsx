@@ -8,7 +8,7 @@ export default function TermsNCondition({ navigation }: any) {
     const { isDark } = useContext(ThemeContext)
 
     return (
-        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
             <View style={{ marginHorizontal: SIZES.padding, }}>
                 <View
                     style={{

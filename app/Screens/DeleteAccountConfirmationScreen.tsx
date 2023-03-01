@@ -7,7 +7,7 @@ export default function DeleteAccountConfirmationScreen({ navigation }: any) {
     const { isDark } = useContext(ThemeContext)
 
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={{ ...FONTS.h1, color: isDark ? COLORS.golden : COLORS.black }}>Are you sure?</Text>
                 <Text style={{ ...FONTS.h4, textAlign: 'center', marginHorizontal: SIZES.padding * 2, marginVertical: SIZES.padding / 2, color: isDark ? COLORS.golden : COLORS.black }}>Do you  really want to delete these records?

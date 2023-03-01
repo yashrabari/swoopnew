@@ -22,7 +22,7 @@ const SettingScreen = ({ navigation }: any) => {
       dot={<View style={{ backgroundColor: isDark ? COLORS.golden : COLORS.black, marginHorizontal: SIZES.padding, width: SIZES.base, height: SIZES.base, borderRadius: SIZES.base, }} />}
     >
 
-      <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+      <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
         <View style={{ marginHorizontal: SIZES.padding, }}>
           <View
             style={{
@@ -100,7 +100,7 @@ const SettingScreen = ({ navigation }: any) => {
               </View>
               <View style={{ marginHorizontal: SIZES.padding * 2 }}>
                 <View style={styles.checkBoxContainer}>
-                  <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>Captaine</Text>
+                  <Text style={{ color: isDark ? COLORS.golden : COLORS.black }}>Captain</Text>
                   <TouchableOpacity onPress={() => setIsChecked(!isChecked)}>
                     <Image style={{ width: 24, height: 24 }} source={isChecked ? (isDark ? icons.ic_check_off_dark : icons.ic_check_off_light) : (isDark ? icons.ic_check_on_dark : icons.ic_check_on_light)} />
                   </TouchableOpacity>
@@ -138,7 +138,7 @@ const SettingScreen = ({ navigation }: any) => {
 
 
 
-      <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+      <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
         <View style={{ marginHorizontal: SIZES.padding, }}>
           <View
             style={{
@@ -186,7 +186,7 @@ const SettingScreen = ({ navigation }: any) => {
                 style={{ width: 24, height: 24 }}
               />
               <TextInput
-                placeholder="Password"
+                placeholder="New Password"
                 style={styles.inputField}
                 placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
 
@@ -199,7 +199,7 @@ const SettingScreen = ({ navigation }: any) => {
                 style={{ width: 24, height: 24 }}
               />
               <TextInput
-                placeholder="Confirm Password"
+                placeholder="Confirm New Password"
                 style={styles.inputField}
                 placeholderTextColor={isDark ? COLORS.golden : COLORS.darkGray}
 
@@ -246,7 +246,7 @@ const SettingScreen = ({ navigation }: any) => {
         </View>
       </View>
 
-      <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+      <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
         <View style={{ marginHorizontal: SIZES.padding, }}>
           <View
             style={{

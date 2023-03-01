@@ -13,14 +13,14 @@ const MySwapScreen = ({ navigation }: any) => {
 
 
     return (
-        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
             <View style={{ marginHorizontal: SIZES.padding }}>
                 <View
                     style={{
                         justifyContent: 'space-between',
                         flexDirection: 'row',
                     }}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('MySwapScreen')}>
                         <Image
                             source={isDark ? icons.ic_swoop_icon_dark : icons.ic_swoop_icon_light}
                             style={{ width: 28, height: 28 }}
@@ -77,24 +77,24 @@ const MySwapScreen = ({ navigation }: any) => {
                             <View style={{
                                 marginVertical: SIZES.padding,
                                 flexDirection: 'row',
-                                justifyContent: 'space-around'
+                                justifyContent: 'space-between'
                             }}>
                                 <TouchableOpacity>
                                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
                                         <Image
                                             source={isDark ? icons.ic_user_blue_dark : icons.ic_user_blue_light}
-                                            style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
+                                            style={{ width: 27, height: 27 }}
                                         />
-                                        <Text style={{ ...FONTS.h3, color: COLORS.blue }}>ESTIMP</Text>
+                                        <Text style={{ ...FONTS.h3, color: COLORS.blue, fontWeight: 'bold', marginHorizontal: SIZES.padding / 2 }}>ESTIMP</Text>
                                     </View>
                                 </TouchableOpacity>
                                 <TouchableOpacity>
 
                                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                                        <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.black }}>DELETE</Text>
+                                        <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.black, fontWeight: 'bold', marginHorizontal: SIZES.padding / 2 }}>DELETE</Text>
                                         <Image
                                             source={isDark ? icons.ic_close_dark : icons.ic_close_light}
-                                            style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
+                                            style={{ width: 27, height: 27 }}
                                         />
                                     </View>
                                 </TouchableOpacity>

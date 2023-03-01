@@ -45,7 +45,7 @@ export default function CreateSwapScreen({ navigation }: any) {
 
 
     return (
-        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingVertical: SIZES.padding * 2 }}>
+        <View style={{ flex: 1, backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray, paddingTop: SIZES.padding * 3 }}>
             <View style={{ marginHorizontal: SIZES.padding, }}>
                 <View
                     style={{
@@ -98,7 +98,7 @@ export default function CreateSwapScreen({ navigation }: any) {
                     />
                     <TouchableOpacity
                         onPress={() => { setDropDownOpen(!dropDownOpen) }}
-                        style={{ ...styles.inputFieldComponent, alignItems: 'center' }}>
+                        style={{ ...styles.inputFieldComponent, alignItems: 'center', marginVertical: SIZES.padding }}>
                         <Image
                             source={isDark ? icons.ic_duty_dark : icons.ic_duty_light}
                             style={{ width: 27, height: 27 }}

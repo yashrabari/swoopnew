@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState, useContext } from 'react';
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { COLORS, FONTS, icons, images, SIZES } from '../constants';
 import { ThemeContext } from '../Contexts/ThemeContext';
 
