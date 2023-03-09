@@ -20,7 +20,8 @@ const LoginScreen = ({ navigation }: any) => {
         <View
             style={{
                 flex: 1,
-                backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray
+                backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray,
+                paddingTop:SIZES.padding*3
             }}>
             <View style={{ flex: 2 }}>
                 <View
