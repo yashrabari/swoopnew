@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState, useContext } from 'react';
-import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Platform, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { COLORS, FONTS, icons, images, SIZES } from '../constants';
 import { ThemeContext } from '../Contexts/ThemeContext';
 
@@ -21,7 +21,7 @@ const LoginScreen = ({ navigation }: any) => {
             style={{
                 flex: 1,
                 backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray,
-                paddingTop:SIZES.padding*3
+                paddingTop: Platform.OS === 'ios' ? SIZES.padding * 3 : null
             }}>
             <View style={{ flex: 2 }}>
                 <View

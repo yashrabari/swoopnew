@@ -75,11 +75,11 @@ const MySwapDetailsScreen = ({ navigation }: any) => {
                 <View style={{
                     marginVertical: SIZES.padding / 2,
                     flexDirection: 'row',
-                    justifyContent: 'space-around'
+                    justifyContent: 'space-between'
                 }}>
                     <TouchableOpacity>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                            <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.black }}>Decline</Text>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                            <Text style={{ ...FONTS.h3, fontWeight: '500', color: isDark ? COLORS.lightGolden : COLORS.black }}>DECLINE</Text>
                             <Image
                                 source={isDark ? icons.ic_close_dark : icons.ic_close_light}
                                 style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
@@ -88,8 +88,8 @@ const MySwapDetailsScreen = ({ navigation }: any) => {
                     </TouchableOpacity>
                     <TouchableOpacity>
 
-                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                            <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.black }}>Accept</Text>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                            <Text style={{ ...FONTS.h3, fontWeight: '500', color: isDark ? COLORS.lightGolden : COLORS.black }}>ACCEPT</Text>
                             <Image
                                 source={isDark ? icons.ic_check_light_dark : icons.ic_check_light}
                                 style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}

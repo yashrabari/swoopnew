@@ -98,7 +98,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                         }}>
                             <TouchableOpacity>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                                    <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.darkGray, fontWeight: 'bold', }}>Decline</Text>
+                                    <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.black, fontWeight: '500', }}>DECLINE</Text>
                                     <Image
                                         source={isDark ? icons.ic_close_dark : icons.ic_close_light}
                                         style={{ width: 27, height: 27, marginHorizontal: SIZES.padding }}
@@ -108,7 +108,7 @@ const AllSwapScreen = ({ navigation }: any) => {
                             <TouchableOpacity>
 
                                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                                    <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.darkGray, fontWeight: 'bold' }}>Accept</Text>
+                                    <Text style={{ ...FONTS.h3, color: isDark ? COLORS.lightGolden : COLORS.black, fontWeight: '500' }}>ACCEPT</Text>
                                     <Image
                                         source={isDark ? icons.ic_check_light_dark : icons.ic_check_light}
                                         style={{ width: 27, height: 27, marginLeft: SIZES.padding }}

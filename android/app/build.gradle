@@ -119,9 +119,9 @@ android {
         }
          release {
                 storeFile file('swoop.keystore')
-                storePassword 'yash9998'
+                storePassword 'Yash@9998'
                 keyAlias 'swoop'
-                keyPassword 'yash9998'
+                keyPassword 'Yash@9998'
             }
     }
     buildTypes {

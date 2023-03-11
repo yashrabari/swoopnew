@@ -98,7 +98,7 @@ export default function CreateSwapScreen({ navigation }: any) {
                     />
                     <TouchableOpacity
                         onPress={() => { setDropDownOpen(!dropDownOpen) }}
-                        style={{ ...styles.inputFieldComponent, alignItems: 'center', marginVertical: SIZES.padding }}>
+                        style={{ ...styles.inputFieldComponent, alignItems: 'center', marginVertical: SIZES.padding * 2 }}>
                         <Image
                             source={isDark ? icons.ic_duty_dark : icons.ic_duty_light}
                             style={{ width: 27, height: 27 }}
