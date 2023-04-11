@@ -16,6 +16,7 @@ import DeleteAccountConfirmationScreen from '../Screens/DeleteAccountConfirmatio
 import DeleteAccountReviewScreen from '../Screens/DeleteAccountReviewScreen';
 import { StatusBar } from 'react-native';
 import { ThemeContext } from '../Contexts/ThemeContext';
+import { AuthContext } from '../Contexts/AuthContext';
 import { COLORS } from '../constants';
 
 
@@ -24,25 +25,36 @@ export default function RootStack() {
 
 
     const { isDark } = useContext(ThemeContext)
+    const { user } = useContext(AuthContext)
 
-    console.log(isDark)
 
     return (
         <NavigationContainer>
             <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={isDark ? COLORS.bgBlack : COLORS.gray} />
             <Stack.Navigator initialRouteName='LoginScreen' screenOptions={{ headerShown: false }} >
-                <Stack.Screen name="LoginScreen" component={LoginScreen} />
-                <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-                <Stack.Screen name="MyCustomTabs" component={MyTabs} />
-                <Stack.Screen name="CreateSwapScreen" component={CreateSwapScreen} />
-                <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-                <Stack.Screen name="MySwapDetails" component={MySwapDetailsScreen} />
-                <Stack.Screen name="AboutUs" component={AboutUsScreen} />
-                <Stack.Screen name="ContactUs" component={ContactUsScreen} />
-                <Stack.Screen name="TermsNCondition" component={TermsNCondition} />
-                <Stack.Screen name="DeleteAccount" component={DeleteAccountScreen} />
-                <Stack.Screen name="DeleteAccountConfirmation" component={DeleteAccountConfirmationScreen} />
-                <Stack.Screen name="DeleteAccountReview" component={DeleteAccountReviewScreen} />
+
+                {
+                    !user.user_id ? (
+                        <>
+                            <Stack.Screen name="LoginScreen" component={LoginScreen} />
+                            <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+                            <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+                        </>
+                    ) : (
+                        <>
+                            <Stack.Screen name="MyCustomTabs" component={MyTabs} />
+                            <Stack.Screen name="CreateSwapScreen" component={CreateSwapScreen} />
+                            <Stack.Screen name="MySwapDetails" component={MySwapDetailsScreen} />
+                            <Stack.Screen name="AboutUs" component={AboutUsScreen} />
+                            <Stack.Screen name="ContactUs" component={ContactUsScreen} />
+                            <Stack.Screen name="TermsNCondition" component={TermsNCondition} />
+                            <Stack.Screen name="DeleteAccount" component={DeleteAccountScreen} />
+                            <Stack.Screen name="DeleteAccountConfirmation" component={DeleteAccountConfirmationScreen} />
+                            <Stack.Screen name="DeleteAccountReview" component={DeleteAccountReviewScreen} />
+                        </>
+                    )
+                }
+
 
             </Stack.Navigator>
         </NavigationContainer>

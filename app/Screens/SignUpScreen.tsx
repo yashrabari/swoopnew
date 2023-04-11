@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Image, SafeAreaView, Text, TextInput, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
+import { signUp } from '../apis/auth';
 import { COLORS, FONTS, icons, SIZES } from '../constants';
 import { ThemeContext } from '../Contexts/ThemeContext';
 
@@ -189,7 +190,7 @@ const SignUpScreen = ({ navigation }: any) => {
                                 style={{ width: 28, height: 28 }}
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('MyCustomTabs')}>
+                        <TouchableOpacity onPress={() => signUp("hello")}>
                             <Image
                                 source={isDark ? icons.ic_check_dark : icons.ic_check_light}
                                 style={{ width: 28, height: 28 }}

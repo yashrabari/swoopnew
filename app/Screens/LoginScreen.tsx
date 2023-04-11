@@ -1,18 +1,75 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState, useContext } from 'react';
-import { Image, Platform, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Platform, Text, TextInput, TouchableOpacity, View, Alert, ActivityIndicator } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AuthContext } from '../Contexts/AuthContext';
+
+
 import { COLORS, FONTS, icons, images, SIZES } from '../constants';
 import { ThemeContext } from '../Contexts/ThemeContext';
+import config from '../config';
+
 
 const LoginScreen = ({ navigation }: any) => {
-    console.log(navigation, 'navigation');
     const [username, setUserName] = useState('');
     const [Password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
     // const navigation = useNavigation();
 
+    const { user, setUser } = useContext(AuthContext)
+
 
     const { isDark } = useContext(ThemeContext)
+
+
+    console.log(user, 'user');
+
+    const handleLogin = async () => {
+        setLoading(true);
+        try {
+            var myHeaders = new Headers();
+            myHeaders.append("key", config.key);
+
+            var formdata = new FormData();
+            formdata.append("email", username);
+            formdata.append("password", Password);
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: formdata,
+                redirect: 'follow'
+            };
+
+
+            var res = await fetch("https://client.appmania.co.in/Swoop/api/login", requestOptions).then(async (res) => await res.json())
+
+            setLoading(false);
+            if (res.ResponseCode == 0) return Alert.alert('Error', res.ResponseMsg);
+
+            if (res.ResponseCode == 1) {
+                setUser(res.data)
+                await AsyncStorage.setItem('user', JSON.stringify(res.data));
+
+            }
+        } catch (error) {
+            console.log(error, 'error');
+            return Alert.alert('Error', 'Something went wrong');
+        }
+    }
+
+
+
+
+
+
+    if (loading) return <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray,
+    }}><ActivityIndicator size={'large'} color={isDark ? COLORS.golden : COLORS.black} /></View>
 
 
 
@@ -21,7 +78,7 @@ const LoginScreen = ({ navigation }: any) => {
             style={{
                 flex: 1,
                 backgroundColor: isDark ? COLORS.bgBlack : COLORS.gray,
-                paddingTop: Platform.OS === 'ios' ? SIZES.padding * 3 : null
+                paddingTop: Platform.OS === 'ios' ? SIZES.padding * 3 : 0
             }}>
             <View style={{ flex: 2 }}>
                 <View
@@ -108,7 +165,7 @@ const LoginScreen = ({ navigation }: any) => {
                         <TouchableOpacity
                             style={{
                             }}
-                            onPress={() => navigation.navigate('MyCustomTabs')}
+                            onPress={() => handleLogin()}
                         >
                             <Text style={{ ...FONTS.h2, color: isDark ? COLORS.golden : COLORS.black }}>
                                 Log In

@@ -3,6 +3,7 @@ import { Image, SafeAreaView, Text, TextInput, View, StyleSheet, TouchableOpacit
 import Swiper from 'react-native-swiper';
 import { COLORS, FONTS, icons, SIZES } from '../constants';
 import { ThemeContext } from '../Contexts/ThemeContext';
+import { AuthContext } from '../Contexts/AuthContext';
 
 const SettingScreen = ({ navigation }: any) => {
   const [username, setUserName] = useState('');
@@ -14,6 +15,8 @@ const SettingScreen = ({ navigation }: any) => {
   const [isTCChecked, setIsTCChecked] = useState(false)
 
   const { isDark, toggleDark } = useContext(ThemeContext)
+
+  const { logout } = useContext(AuthContext)
 
   return (
     <Swiper
@@ -312,7 +315,7 @@ const SettingScreen = ({ navigation }: any) => {
                 <Text style={[styles.inputField, { color: isDark ? COLORS.golden : COLORS.darkGray }]}>Delete Account</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
+            <TouchableOpacity onPress={() => logout()}>
               <View
                 style={styles.inputFieldComponent}>
                 <Image

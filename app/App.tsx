@@ -3,6 +3,7 @@ import SplashScreen from 'react-native-splash-screen'
 
 import { ThemeContextProvider } from './Contexts/ThemeContext'
 import RootStack from './routes/RootStack'
+import { AuthContextProvider } from './Contexts/AuthContext'
 
 
 export default function App() {
@@ -13,9 +14,11 @@ export default function App() {
 
     return (
         <>
-            <ThemeContextProvider>
-                <RootStack />
-            </ThemeContextProvider>
+            <AuthContextProvider>
+                <ThemeContextProvider>
+                    <RootStack />
+                </ThemeContextProvider>
+            </AuthContextProvider>
         </>
     )
 }
